@@ -19,7 +19,6 @@ function subarraySum(nums: number[], k: number): number {
         }
     }
 
-
     return res
 };
 
@@ -55,3 +54,5 @@ function subarraySum01(nums: number[], k: number): number {
     return res
 
 };
+
+ 
