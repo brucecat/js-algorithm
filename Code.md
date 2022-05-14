@@ -258,6 +258,8 @@ function findFromEnd(head: ListNode, k: number) {
 
 ### 左右指针
 
+leetcode题目：面试题01.05
+
 左右指针在数组中实际是指两个索引值，一般初始化为`left = 0, right = nums.length - 1`。
 
 **1、二分查找**
@@ -454,7 +456,7 @@ https://leetcode.cn/problems/shortest-subarray-to-be-removed-to-make-array-sorte
 1648. 销售价值减少的颜色球	1648. 多重二分查找 + 多维度二分查找	排序 + 前缀和 + 二分查找
 1201. 丑数 III	1201. 蓝红二分法分左右	二分查找
 911. 在线选举	911. 蓝红二分法分左右	二分查找
- 
+
 
 ![image-20220426160852657](Code.assets/image-20220426160852657.png)
 
@@ -964,6 +966,99 @@ Dijkstra 算法（一般音译成迪杰斯特拉算法）相当于一个 BFS 算
 
 
 
+## 并查集（UNION-FIND）
+
+leetcode:323、130、 990
+
+```typescript
+class UF {
+    // 记录连通分量
+    count;
+
+    // 节点 x 的根节点是 parent[x]
+    parent;
+
+    // 记录树的“重量”
+    size;
+
+    constructor(n) {
+
+        // 一开始互不连通
+        this.count = n;
+
+        // 父节点指针初始指向自己
+        this.parent = new Array(n);
+
+        this.size = new Array(n);
+
+        for (let i = 0; i < n; i++) {
+            this.parent[i] = i;
+            this.size[i] = 1;
+        }
+    }
+
+    /* 返回某个节点 x 的根节点 */
+    find(x) {
+        // 根节点的 parent[x] == x
+        while (this.parent[x] !== x) {
+            // 进行路径压缩
+            this.parent[x] = this.parent[this.parent[x]];
+            x = this.parent[x];
+        }
+        return x;
+    }
+
+    /* 将 p 和 q 连接 */
+    union(p, q) {
+        // 如果某两个节点被连通，则让其中的（任意）
+        // 一个节点的根节点接到另一个节点的根节点上
+        let rootP = this.find(p);
+        let rootQ = this.find(q);
+        if (rootP === rootQ) return;
+
+        // 小树接到大树下面，较平衡
+        if (this.size[rootP] > this.size[rootQ]) {
+            this.parent[rootQ] = rootP;
+            this.size[rootP] += this.size[rootQ];
+        } else {
+            this.parent[rootP] = rootQ;
+            this.size[rootQ] += this.size[rootP];
+        }
+
+        this.count--; // 两个分量合二为一
+    }
+
+    /* 判断 p 和 q 是否连通 */
+    connected(p, q) {
+        let rootP = this.find(p);
+        let rootQ = this.find(q);
+        return rootP === rootQ;
+    };
+
+    /* 返回图中有多少个连通分量 */
+    getCount() {
+        return this.count;
+    };
+}
+
+```
+
+
+
+## 动态规划
+
+### 动态规划：博弈
+
+
+
+
+
+
+
+### 动态规划：最长递增子序列
+
+https://labuladong.github.io/algo/3/24/77/
+
 
 
 
@@ -1008,6 +1103,274 @@ Dijkstra 算法（一般音译成迪杰斯特拉算法）相当于一个 BFS 算
 
 
 
+### 二叉搜索树
+
+leetcode: 449
+
+```js
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+
+/**
+ * Encodes a tree to a single string.
+ *
+ * @param {TreeNode} root
+ * @return {string}
+ */
+ var serialize = function(root) {
+    const ans = new Array()
+    const dfs = function(node) {
+        if(node != null) {
+            dfs(node.left)
+            dfs(node.right)
+            ans.push(node.val)
+        }
+    }
+    dfs(root)
+    return ans.join(",")
+};
+
+/**
+ * Decodes your encoded data to tree.
+ *
+ * @param {string} data
+ * @return {TreeNode}
+ */
+var deserialize = function(data) {
+    if(data == "") {
+        return null
+    }
+    const vals = data.split(",").map(i => parseInt(i))
+    const dfs = function(left, right) {
+        const len = vals.length
+        if(len == 0 || vals[len - 1] < left || vals[len - 1] > right)
+            return null
+        const val = vals.pop()
+        const node = new TreeNode(val)
+        node.right = dfs(val, right)
+        node.left = dfs(left, val)
+        return node
+    }
+    return dfs(-1, 10007)
+};
+
+/**
+ * Your functions will be called as such:
+ * deserialize(serialize(root));
+ */
+ 
+```
+
+
+
+
+
 
 
 ## 图(graph)
+
+https://labuladong.github.io/algo/2/20/48/
+
+图的遍历框架
+
+```java
+// 记录被遍历过的节点
+boolean[] visited;
+// 记录从起点到当前节点的路径
+boolean[] onPath;
+
+/* 图遍历框架 */
+void traverse(Graph graph, int s) {
+    if (visited[s]) return;
+    // 经过节点 s，标记为已遍历
+    visited[s] = true;
+    // 做选择：标记节点 s 在路径上
+    onPath[s] = true;
+    for (int neighbor : graph.neighbors(s)) {
+        traverse(graph, neighbor);
+    }
+    // 撤销选择：节点 s 离开路径
+    onPath[s] = false;
+}
+```
+
+
+
+很多题目需要手动构建图
+
+```js
+
+// 建图函数
+function buildGraph(n: number, prerequisites: number[][]): number[][] {
+    // 图节点编号为 1...n
+    let graph = new Array(n + 1).fill(0);
+
+    for (let i = 0; i <= n; i++) {
+        graph[i] = [];
+    }
+
+    prerequisites.forEach(edge => {
+        let from = edge[1];
+        let to = edge[0];
+
+        // 「无向图」相当于「双向图」
+        // v -> w
+        // graph[v].push(w);
+        // // w -> v
+        // graph[w].push(v);
+
+        // 修完课程 from 才能修课程 to
+        // 在图中添加一条从 from 指向 to 的有向边
+        graph[from].push(to)
+    })
+
+    // console.log(graph);
+    return graph
+}
+```
+
+leetcode: 797、785、207、210
+
+
+
+### 判断二分图
+
+```js
+// 主函数，输入邻接表，判断是否是二分图
+// 用两种颜色将图中的所有顶点着色，
+// 且使得任意一条边的两个端点的颜色都不相同
+function isBipartite(graph: number[][]): boolean {
+    let n = graph.length
+    // 记录图是否符合二分图性质
+    let ok: boolean = true;
+    // 记录图中节点的颜色，false 和 true 代表两种不同颜色
+    let color: boolean[] = new Array(n).fill(false)
+    // 记录图中节点是否被访问过
+    let visited: boolean[] = new Array(n).fill(false)
+
+    // DFS 遍历框架
+    function traverse(graph: number[][], v: number): void {
+        // 如果已经确定不是二分图了，就不用浪费时间再递归遍历了
+        if (!ok) return
+
+        visited[v] = true
+
+        graph[v].forEach(w => {
+            if (!visited[w]) {
+                // 相邻节点 w 没有被访问过
+                // 那么应该给节点 w 涂上和节点 v 不同的颜色
+                color[w] = !color[v];
+                // 继续遍历 w
+                traverse(graph, w);
+            } else {
+                // 相邻节点 w 已经被访问过
+                // 根据 v 和 w 的颜色判断是否是二分图
+                if (color[w] == color[v]) {
+                    // 若相同，则此图不是二分图
+                    ok = false;
+                }
+            }
+        })
+    }
+
+    // 因为图不一定是联通的，可能存在多个子图
+    // 所以要把每个节点都作为起点进行一次遍历
+    // 如果发现任何一个子图不是二分图，整幅图都不算二分图
+    for (let v = 0; v < n; v++) {
+        if (!visited[v]) {
+            traverse(graph, v);
+        }
+    }
+    return ok;
+};
+```
+
+
+
+### 判断图中是否有环
+
+```
+function canFinish(numCourses: number, prerequisites: number[][]): boolean {
+
+    // 记录一次 traverse 递归经过的节点
+    const onPath: boolean[] = new Array(numCourses).fill(false)
+
+    // 记录遍历过的节点，防止走回头路
+    const visited: boolean[] = new Array(numCourses).fill(false)
+
+    // 记录图中是否有环
+    let hasCycle: boolean = false
+
+    // 构建图
+    const graph = buildGraph(numCourses, prerequisites)
+
+    // DFS 遍历框架
+    function traverse(graph: number[][], v: number): void {
+        // 出现环
+        if (onPath[v]) {
+            hasCycle = true
+        }
+
+        if (visited[v] || hasCycle) {
+            // 如果已经找到了环，也不用再遍历了
+            return;
+        }
+
+        // 前序遍历代码位置
+        visited[v] = true
+        onPath[v] = true;
+
+        graph[v].forEach(w => {
+            traverse(graph, w);
+        })
+
+        // 后序遍历代码位置
+        onPath[v] = false;
+    }
+
+    // 遍历图中的所有节点
+    for (let i = 0; i < numCourses; i++) {
+        traverse(graph, i);
+    }
+
+    // 只要没有循环依赖可以完成所有课程
+    return !hasCycle;
+};
+
+
+
+// 建图函数
+function buildGraph(n: number, prerequisites: number[][]): number[][] {
+    // 图节点编号为 1...n
+    let graph = new Array(n + 1).fill(0);
+
+    for (let i = 0; i <= n; i++) {
+        graph[i] = [];
+    }
+
+    prerequisites.forEach(edge => {
+        let from = edge[1];
+        let to = edge[0];
+
+        // 「无向图」相当于「双向图」
+        // v -> w
+        // graph[v].push(w);
+        // // w -> v
+        // graph[w].push(v);
+
+        // 修完课程 from 才能修课程 to
+        // 在图中添加一条从 from 指向 to 的有向边
+        graph[from].push(to)
+    })
+
+    // console.log(graph);
+    return graph
+}
+
+```
+
