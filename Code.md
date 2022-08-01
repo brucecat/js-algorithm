@@ -642,6 +642,45 @@ function findFromEnd(head: ListNode, k: number) {
 
 
 
+
+
+## 原地哈希
+
+给定数组长度为 n*n*，且所有数范围在 [1, n][1,*n*]，找出出现次数超过一次的所有数字。
+
+- 时间复杂度：O(n) 
+- 空间复杂度：O(1) 
+
+leetcode：442
+
+```typescript
+/*
+    数组nums下标范围为[0, nums.size() - 1]；
+    数组内元素范围为[1, max(num)]；
+    遍历一遍nums，每个元素都可以映射为nums数组中的唯一下标，如果任意元素出现过两次，那么该下标会被访问两次
+    在第一次访问此下标时，对其进行标记(比如对其取反)，当第二次访问到该位置时，若发现已经被标记过，说明当前元素已经是第二次出现了。
+    加入答案。
+*/
+function findDuplicates(nums: number[]): number[] {
+    const ans = new Array()
+    for (let i = 0; i < nums.length; i++) {
+        const org = Math.abs(nums[i])
+        if (nums[org - 1] > 0) {
+            nums[org - 1] *= -1
+        } else {
+            ans.push(org)
+        }
+    }
+    return ans
+};
+```
+
+
+
+
+
+
+
 ## 链表操作
 
 常用：双指针中的快慢指针、递归
@@ -924,15 +963,151 @@ function advantageCount02(nums1: number[], nums2: number[]): number[] {
 
 
 
-## 动态规划
+## 回溯
+
+回溯套路总结
+
+https://blog.csdn.net/qq_41996454/article/details/124801187
+
+leetcode：51N皇后、46全排列、698
+
+```typescript
+function permute(nums: number[]): number[][] {
+    // 1. 设置结果集
+    const result: number[][] = [];
+
+    // 2. 回溯
+    const recursion = (path, set) => {
+        // 2.1 设置回溯终止条件
+        if (path.length === nums.length) {
+
+            // 2.1.1 推入结果集
+            result.push(path.concat());
+
+            // 2.1.2 终止递归
+            return;
+        }
+
+        // 2.2 遍历数组
+        for (let i = 0; i < nums.length; i++) {
+
+            // 2.2.1 必须是不存在 set 中的坐标
+            if (!set.has(i)) {
+
+                // 2.2.2 本地递归条件（用完记得删除）
+                path.push(nums[i]);
+                set.add(i);
+
+                // 2.2.3 进一步递归
+                recursion(path, set);
+
+                // 2.2.4 回溯：撤回 2.2.2 的操作
+                path.pop();
+                set.delete(i);
+            }
+        }
+    };
+    recursion([], new Set());
+
+    // 3. 返回结果
+    return result;
+};
+```
 
 
 
+698 
+
+typescript | javascript | 回溯框架
+
+思路：https://leetcode.cn/problems/partition-to-k-equal-sum-subsets/solution/hua-fen-wei-kge-by-sui-ji-guo-cheng-sui-jfaao/
+
+**以子集（桶）为视角**
+
+- 以子集（桶）的视角进行穷举，每个桶需要遍历 nums 中的所有数字，判断是否把当前数字放入子集中。当装满一个子集之后，再装下一个子集，直到所有桶全部装满为止。可以看到递归函数 backtrack 中变化的参数是 k ，这个是桶的编号。
+
+- backtrack 函数的逻辑
+  - 遍历 nums 中所有的数字，判断能否放入子集中
+  - 如果当前子集已经满了（bucketSum == target）时，递归下一个子集开始执行上述过程
+- 剪枝同样很重要
+  - 对于某个不满足题意的子集组合，如果不加以剪枝限制，可能还会出现在另外一个桶中，所以需要记录该子集组合，一旦出现，则进行剪枝。
+  - 在装满一个桶时记录当前 used 的状态，如果当前 used 的状态是曾经出现过的，那就不用再继续穷举，从而起到剪枝避免冗余计算的作用。
+  - 可以使用 HashMap 记录 boolean 数组 used 的内容，把数组改成字符串可能比较耗时，可以使用位图的技巧。
 
 
 
+```typescript
+function canPartitionKSubsets(nums: number[], k: number): boolean {
+
+    // 备忘录
+    let memo: Map<number, boolean> = new Map()
 
 
+    // 回溯算法核心函数，遍历子集问题的回溯树
+    const backtrack = (k: number, bucket: number,
+        nums: number[], start: number, used: number, target: number) => {
+
+        // base case
+        if (k == 0) {
+            // 所有桶都被装满了，而且 nums 一定全部用完了
+            return true;
+        }
+
+        // base case，超过目标和，停止向下遍历
+        if (bucket == target) {
+            // 装满了当前桶，递归穷举下一个桶的选择
+            // 让下一个桶从 nums[0] 开始选数字
+            let res = backtrack(k - 1, 0, nums, 0, used, target);
+            // 缓存结果
+            memo.set(used, res)
+            return res;
+        }
+
+        if (memo.has(used)) {
+            // 避免冗余计算
+            return memo.get(used);
+        }
+
+        // 回溯算法标准框架
+        for (let i = start; i < nums.length; i++) {
+            // 剪枝
+            if (((used >> i) & 1) == 1) { // 判断第 i 位是否是 1
+                // nums[i] 已经被装入别的桶中
+                continue;
+            }
+            if (nums[i] + bucket > target) {
+                continue;
+            }
+            // 做选择
+            used |= 1 << i; // 将第 i 位置为 1
+            bucket += nums[i];
+
+            // 递归穷举下一个数字是否装入当前桶
+            if (backtrack(k, bucket, nums, i + 1, used, target)) {
+                return true;
+            }
+
+            // 撤销选择
+            used ^= 1 << i; // 使用异或运算将第 i 位恢复 0
+            bucket -= nums[i];
+        }
+        return false;
+    }
+
+    // -----------------开始主函数-------------
+    // 排除一些基本情况
+    if (k > nums.length) return false;
+    let sum = 0;
+    for (let v of nums) sum += v;
+    if (sum % k != 0) return false;
+
+    let used = 0; // 使用位图技巧
+    let target = sum / k;
+    // k 号桶初始什么都没装，从 nums[0] 开始做选择
+    return backtrack(k, 0, nums, 0, used, target);
+
+};
+```
 
 
 
@@ -946,11 +1121,17 @@ breadth-first-search
 
 ![img](https://labuladong.github.io/algo/images/dijkstra/1.jpeg)
 
+https://leetcode.cn/problems/open-the-lock/solution/by-scuhzs-0f1g/
 
+
+
+https://labuladong.github.io/article/?qno=752
 
 ## DFS
 
+### 岛屿问题
 
+https://leetcode.cn/problems/number-of-islands/solution/by-scuhzs-qw1w/
 
 
 
@@ -1049,7 +1230,7 @@ class UF {
 
 ### 动态规划：博弈
 
-
+464
 
 
 
@@ -1058,6 +1239,14 @@ class UF {
 ### 动态规划：最长递增子序列
 
 https://labuladong.github.io/algo/3/24/77/
+
+
+
+
+
+### 动态规划：编辑距离
+
+https://labuladong.github.io/algo/3/24/74/
 
 
 
@@ -1372,5 +1561,71 @@ function buildGraph(n: number, prerequisites: number[][]): number[][] {
     return graph
 }
 
+```
+
+
+
+
+
+
+
+# 经典问题
+
+## 岛屿问题
+
+https://leetcode.cn/problems/number-of-islands/solution/by-scuhzs-qw1w/
+
+
+
+## 约瑟夫环问题
+
+约瑟夫环问题是这样的：
+
+0, 1, …, n - 10,1,…,n−1 这 nn 个数字排成一个圆圈，从数字 00 开始，每次从这个圆圈里删除第 mm 个数字。求出这个圆圈里剩下的最后一个数字。
+
+例如，0、1、2、3、40、1、2、3、4 这 5 个数字组成一个圆圈，从数字 0 开始每次删除第 3 个数字，则删除的前 4 个数字依次是 2、0、4、12、0、4、1，因此最后剩下的数字是 33。
+
+ **方法一：模拟 + 队列**
+
+```js
+var findTheWinner = function(n, k) {
+    const queue = [];
+    for (let i = 1; i <= n; i++) {
+        queue.push(i);
+    }
+    while (queue.length > 1) {
+        for (let i = 1; i < k; i++) {
+            queue.push(queue.shift());
+        }
+        queue.shift();
+    }
+    return queue[0];
+};
+　
+```
+
+**方法二：数学 + 递归**
+
+```js
+var findTheWinner = function(n, k) {
+    if (n === 1) {
+        return 1;
+    }
+    return (k + findTheWinner(n - 1, k) - 1) % n + 1;
+};
+ 
+```
+
+**方法三：数学 + 迭代**
+
+```js
+var findTheWinner = function(n, k) {
+    let winner = 1;
+    for (let i = 2; i <= n; i++) {
+        winner = (k + winner - 1) % i + 1;
+    }
+    return winner;
+};
+ 
 ```
 
