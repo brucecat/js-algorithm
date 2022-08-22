@@ -47,12 +47,6 @@ https://www.nowcoder.com/questionTerminal/14c0359fb77a48319f0122ec175c9ada
 /***************************************************************************/
 // 使用BigInt来解决Number越界问题
 
-let input = [];
-const readline = require('readline');
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-})
 function solution(input) {
     let n = parseInt(input[0]);
     // console.log(input); 
@@ -76,6 +70,15 @@ function ave(a, b, c) {
     }
     return (sum + 2n) / 3n;
 }
+
+
+
+let input = [];
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+})
 rl.on('line', line => {
     input.push(line);
     let n = parseInt(input[0]);
