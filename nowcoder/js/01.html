@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class='triangle'></div>
+
+        <script>
+            var triangle = document.querySelector('.triangle');
+            // 补全代码
+            // triangle.innerHTML = new Array(3).fill('*').map((item, index)=>{
+            //     return "*".repeat(i+1)
+            // }).join('<br/>')
+            triangle.innerHTML = new Array(3).fill("").map((_i, i) => "*".repeat(i + 1)).join("<br/>")
+        </script>
+    </body>
+</html>

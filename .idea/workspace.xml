@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="df78faf0-27b8-4dc7-8d72-3ec577b8b449" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/js中数组方法.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/技巧汇总.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TypeScript.md" beforeDir="false" afterPath="$PROJECT_DIR$/TypeScript学习.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js刷leetcode注意事项.md" beforeDir="false" afterPath="$PROJECT_DIR$/js刷leetcode注意事项.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leetcode/1728/01.java" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode/1728/01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leetcode/464/01.java" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode/464/01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leetcode/698/01.java" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode/698/01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leetcode/698/02.java" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode/698/02.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leetcode/698/03.java" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode/698/03.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leetcode/699/01.java" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode/699/01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leetcode/699/02.java" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode/699/02.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leetcode/mst01.05/01.java" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode/mst01.05/01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2F86ZKAzdSmPG5nzOezdbv0N9gH" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettier.files.pattern" value="{**/*,*}.{js,ts,jsx,tsx,vue,html,css,less}" />
+    <property name="prettierjs.PrettierConfiguration.NodeInterpreter" value="/usr/local/bin/node" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$USER_HOME$/pnpm-global/5/node_modules/.pnpm/registry.npmmirror.com+prettier@2.7.1/node_modules/prettier" />
+    <property name="run.prettier.on.save" value="true" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="df78faf0-27b8-4dc7-8d72-3ec577b8b449" name="Default Changelist" comment="" />
+      <created>1663861420074</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1663861420074</updated>
+      <workItem from="1663861422587" duration="410000" />
+      <workItem from="1664076947653" duration="3482000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/leetcode/1728/01.js" />
+        <option value="$PROJECT_DIR$/leetcode/1631/01.js" />
+        <option value="$PROJECT_DIR$/leetcode/797/01.js" />
+        <option value="$PROJECT_DIR$/leetcode/752/01.js" />
+        <option value="$PROJECT_DIR$/leetcode/449/01.js" />
+        <option value="$PROJECT_DIR$/leetcode/304/01.js" />
+        <option value="$PROJECT_DIR$/leetcode/303/01.js" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="239" y="122" key="SettingsEditor" timestamp="1665042738266">
+      <screen x="0" y="25" width="1440" height="875" />
+    </state>
+    <state x="239" y="122" key="SettingsEditor/0.25.1440.875@0.25.1440.875" timestamp="1665042738266" />
+  </component>
+</project>
