@@ -1,70 +1,36 @@
-/**
- * @param {number[][]} graph
- * @return {number[][]}
- */
-var allPathsSourceTarget = function (graph) {
-    // bfs
-    const target = graph.length - 1;
-    let stack = [[0, '0']];
-    const ans = [];
-    while (stack.length) {
-        const temp = [];
-        let len = stack.length;
-        while (len--) {
-            const cur = stack.pop();
-            if (cur[0] === target) { // 收割结果
-                ans.push(cur[1].split(','));
-            }
-            for (const to of graph[cur[0]]) {
-                temp.push([to, cur[1] + ',' + to]); // 入栈的同时，用逗号拼接形成路径
-            }
-        }
-        stack = temp;
-    }
-    return ans;
+var __spreadArrays = (this && this.__spreadArrays) || function () {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
 };
-
-
-/**
- * @param {number[][]} graph
- * @return {number[][]}
- */
-var allPathsSourceTarget = function (graph) {
-    // dfs爆搜
-    const target = graph.length - 1;
-    const dfs = (path, to) => {
-        path.push(to);
-        if (to === target) {
-            ans.push([...path]);
-            return;
-        }
-        for (const value of graph[to]) {
-            dfs([...path], value);
-        }
+function allPathsSourceTarget(graph) {
+    if (graph.length < 1) {
+        return [];
     }
-    const ans = [];
-    dfs([], 0);
-    return ans;
-};
-
-
-/**
- * @param {number[][]} graph
- * @return {number[][]}
- */
-var allPathsSourceTarget = function (graph) {
-    // 回溯
-    const ans = [];
-    const dfs = (cur, path) => {
+    var ans = [];
+    /* 图的遍历框架 */
+    var traverse = function (cur, path) {
+        // 到达终点
         if (cur === graph.length - 1) {
-            ans.push([...path]);
+            ans.push(__spreadArrays(path));
+            // 可以在这直接 return，但要 removeLast 正确维护 path
+            // path.removeLast();
+            // return;
+            // 不 return 也可以，因为图中不包含环，不会出现无限递归
         }
-        for (const val of graph[cur]) {
+        // 递归每个相邻节点
+        for (var _i = 0, _a = graph[cur]; _i < _a.length; _i++) {
+            var val = _a[_i];
             path.push(val);
-            dfs(val, path);
+            traverse(val, path);
+            // 从路径移出节点 s
             path.pop();
         }
-    }
-    dfs(0, [0]);
+    };
+    traverse(0, [0]);
     return ans;
-};
+}
+;
+// https://leetcode.cn/problems/all-paths-from-source-to-target/solution/jsde-bao-sou-hui-su-he-bfs-by-huangshanh-mg0b/

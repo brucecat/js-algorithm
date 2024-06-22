@@ -26,6 +26,8 @@ function serialize(root) {
 function deserialize(data) {
     if (data.length < 1)
         return null;
+    if (data.length == 1)
+        return new TreeNode(parseInt(data[0]));
     // 转化成前序遍历结果
     var preOrder = data.split(",").map(function (item) { return parseInt(item); });
     // console.log(preOrder)

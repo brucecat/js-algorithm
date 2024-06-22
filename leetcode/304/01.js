@@ -7,7 +7,10 @@ var NumMatrix = /** @class */ (function () {
             return;
         }
         // preSum[i][j] 记  matrix 中⼦矩阵 [0, 0, i-1, j-1] 的元素和
-        this.preSum = new Array(m + 1).fill(new Array(n + 1).fill(0));
+        this.preSum = new Array(m + 1);
+        for (var i = 0; i < m + 1; i++) {
+            this.preSum[i] = new Array(n + 1).fill(0);
+        }
         // 计算每个矩阵[0,0, i ,j]的元素和
         for (var i = 1; i <= m; i++) {
             for (var j = 1; j <= n; j++) {
