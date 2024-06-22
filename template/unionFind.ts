@@ -8,7 +8,7 @@ class UF {
     // n 为图中节点的个数
     constructor(n: number) {
         this.count = n;
-        this.parent = new Array(n)
+        this.parent = new Array(n);
         for (let i = 0; i < n; i++) {
             this.parent[i] = i;
         }
@@ -16,14 +16,14 @@ class UF {
 
     // 将节点 p 和节点 q 连通
     public union(p: number, q: number) {
-        let rootP = this.find(p)
-        let rootQ = this.find(q)
+        let rootP = this.find(p);
+        let rootQ = this.find(q);
 
         if (rootP == rootQ) {
-            return
+            return;
         }
 
-        this.parent[rootQ] = rootP
+        this.parent[rootQ] = rootP;
 
         // 两个连通分量合并成一个连通分量
         this.count--;
@@ -32,8 +32,8 @@ class UF {
     // 判断节点p和节点q是否联通
     public connected(p: number, q: number) {
         let rootP = this.find(p);
-        let rootQ = this.find(q)
-        return rootP == rootQ
+        let rootQ = this.find(q);
+        return rootP == rootQ;
     }
 
     // 压缩
@@ -46,6 +46,6 @@ class UF {
 
     // 返回图中的连通分量个数
     public getCount(): number {
-        return this.count
+        return this.count;
     }
 }
