@@ -1,0 +1,3 @@
+function smallestStringWithSwaps(s, pairs) {
+}
+;

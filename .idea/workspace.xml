@@ -11,27 +11,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df78faf0-27b8-4dc7-8d72-3ec577b8b449" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/leetcode/11/01.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leetcode/11/01.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leetcode/1691.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leetcode/17/02.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nowcoder/hw/16.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nowcoder/hw/77.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/01.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/01.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/02.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/od/01.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leetcode/1631/01.js" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode/1631/01.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leetcode/17/01.ts" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode/17/01.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leetcode/1728/01.js" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode/1728/01.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leetcode/303/01.js" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode/303/01.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leetcode/304/01.js" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode/304/01.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leetcode/449/01.js" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode/449/01.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leetcode/752/01.js" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode/752/01.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leetcode/797/01.js" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode/797/01.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/nextGreaterElement.ts" beforeDir="false" afterPath="$PROJECT_DIR$/template/nextGreaterElement.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/技巧汇总.md" beforeDir="false" afterPath="$PROJECT_DIR$/技巧汇总.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.pnpm/lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.pnpm/lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/datastructures-js/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/datastructures-js/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/datastructures-js/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/datastructures-js/i.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/datastructures-js/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/datastructures-js/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/datastructures-js/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/01.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/01.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,15 +54,15 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="16.13.2" />
-    <property name="javascript.nodejs.core.library.typings.version" value="16.11.68" />
+    <property name="javascript.nodejs.core.library.configured.version" value="18.16.1" />
+    <property name="javascript.nodejs.core.library.typings.version" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettier.files.pattern" value="{**/*,*}.{js,ts,jsx,tsx,vue,html,css,less}" />
     <property name="prettierjs.PrettierConfiguration.NodeInterpreter" value="/usr/local/bin/node" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$USER_HOME$/pnpm-global/5/node_modules/.pnpm/registry.npmmirror.com+prettier@2.7.1/node_modules/prettier" />
     <property name="run.prettier.on.save" value="true" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -79,14 +71,17 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.01.js (1)">
-    <configuration name="01.js (1)" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/test/01.js" working-dir="$PROJECT_DIR$/test">
+  <component name="RunManager" selected="Node.js.01.js">
+    <configuration name="01.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="01.js" working-dir="$PROJECT_DIR$/test">
       <method v="2" />
     </configuration>
-    <configuration name="01.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/leetcode/17/01.js" working-dir="$PROJECT_DIR$/leetcode/17">
+    <configuration name="01.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="01.js" working-dir="$PROJECT_DIR$/leetcode/17">
       <method v="2" />
     </configuration>
     <configuration name="77.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/nowcoder/hw/77.js" working-dir="$PROJECT_DIR$/nowcoder/hw">
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="NodeJSConfigurationType" nameIsGenerated="true" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <configuration name="commit.sh" type="ShConfigurationType" temporary="true">
@@ -102,7 +97,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.01.js (1)" />
+        <item itemvalue="Node.js.01.js" />
         <item itemvalue="Node.js.77.js" />
         <item itemvalue="Node.js.01.js" />
         <item itemvalue="Shell Script.commit.sh" />
@@ -125,6 +120,7 @@
       <workItem from="1665402222019" duration="6082000" />
       <workItem from="1667280693313" duration="1505000" />
       <workItem from="1670253862923" duration="30558000" />
+      <workItem from="1719120264315" duration="611000" />
     </task>
     <servers />
   </component>
@@ -306,34 +302,81 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1419" height="170" key="GridCell.Tab.0.bottom" timestamp="1672045247127">
-      <screen x="0" y="25" width="1440" height="875" />
-    </state>
-    <state width="1419" height="42" key="GridCell.Tab.0.bottom/-624.-1415.2560.1415/0.25.1440.875@0.25.1440.875" timestamp="1670933921077" />
-    <state width="1419" height="170" key="GridCell.Tab.0.bottom/0.25.1440.875@0.25.1440.875" timestamp="1672045247127" />
-    <state width="1419" height="170" key="GridCell.Tab.0.center" timestamp="1672045247126">
-      <screen x="0" y="25" width="1440" height="875" />
-    </state>
-    <state width="1419" height="42" key="GridCell.Tab.0.center/-624.-1415.2560.1415/0.25.1440.875@0.25.1440.875" timestamp="1670933921076" />
-    <state width="1419" height="170" key="GridCell.Tab.0.center/0.25.1440.875@0.25.1440.875" timestamp="1672045247126" />
-    <state width="1419" height="170" key="GridCell.Tab.0.left" timestamp="1672045247125">
-      <screen x="0" y="25" width="1440" height="875" />
-    </state>
-    <state width="1419" height="42" key="GridCell.Tab.0.left/-624.-1415.2560.1415/0.25.1440.875@0.25.1440.875" timestamp="1670933921075" />
-    <state width="1419" height="170" key="GridCell.Tab.0.left/0.25.1440.875@0.25.1440.875" timestamp="1672045247125" />
-    <state width="1419" height="170" key="GridCell.Tab.0.right" timestamp="1672045247126">
-      <screen x="0" y="25" width="1440" height="875" />
-    </state>
-    <state width="1419" height="42" key="GridCell.Tab.0.right/-624.-1415.2560.1415/0.25.1440.875@0.25.1440.875" timestamp="1670933921076" />
-    <state width="1419" height="170" key="GridCell.Tab.0.right/0.25.1440.875@0.25.1440.875" timestamp="1672045247126" />
-    <state x="239" y="122" key="SettingsEditor" timestamp="1665042738266">
-      <screen x="0" y="25" width="1440" height="875" />
-    </state>
-    <state x="239" y="122" key="SettingsEditor/0.25.1440.875@0.25.1440.875" timestamp="1665042738266" />
-    <state x="385" y="194" width="670" height="696" key="search.everywhere.popup" timestamp="1672043941038">
+    <state x="184" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1719120612978">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="214" width="670" height="676" key="search.everywhere.popup/-624.-1415.2560.1415/0.25.1440.875@0.25.1440.875" timestamp="1670746628806" />
-    <state x="385" y="194" width="670" height="696" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1672043941038" />
+    <state x="184" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1719120612978" />
+    <state width="1419" height="182" key="GridCell.Tab.0.bottom" timestamp="1719120727835">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="182" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1719120727835" />
+    <state width="1419" height="182" key="GridCell.Tab.0.center" timestamp="1719120727834">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="182" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1719120727834" />
+    <state width="1419" height="182" key="GridCell.Tab.0.left" timestamp="1719120727834">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="182" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1719120727834" />
+    <state width="1419" height="182" key="GridCell.Tab.0.right" timestamp="1719120727835">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="182" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1719120727835" />
+    <state width="1419" height="298" key="GridCell.Tab.1.bottom" timestamp="1719120745595">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="298" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1719120745595" />
+    <state width="1419" height="298" key="GridCell.Tab.1.center" timestamp="1719120745594">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="298" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1719120745594" />
+    <state width="1419" height="298" key="GridCell.Tab.1.left" timestamp="1719120745593">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="298" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1719120745593" />
+    <state width="1419" height="298" key="GridCell.Tab.1.right" timestamp="1719120745594">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="298" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1719120745594" />
+    <state width="1419" height="298" key="GridCell.Tab.2.bottom" timestamp="1719120744713">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="298" key="GridCell.Tab.2.bottom/0.0.1440.900@0.0.1440.900" timestamp="1719120744713" />
+    <state width="1419" height="298" key="GridCell.Tab.2.center" timestamp="1719120744712">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="298" key="GridCell.Tab.2.center/0.0.1440.900@0.0.1440.900" timestamp="1719120744712" />
+    <state width="1419" height="298" key="GridCell.Tab.2.left" timestamp="1719120744711">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="298" key="GridCell.Tab.2.left/0.0.1440.900@0.0.1440.900" timestamp="1719120744711" />
+    <state width="1419" height="298" key="GridCell.Tab.2.right" timestamp="1719120744712">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="298" key="GridCell.Tab.2.right/0.0.1440.900@0.0.1440.900" timestamp="1719120744712" />
+    <state width="1419" height="298" key="GridCell.Tab.3.bottom" timestamp="1719120743887">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="298" key="GridCell.Tab.3.bottom/0.0.1440.900@0.0.1440.900" timestamp="1719120743887" />
+    <state width="1419" height="298" key="GridCell.Tab.3.center" timestamp="1719120743886">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="298" key="GridCell.Tab.3.center/0.0.1440.900@0.0.1440.900" timestamp="1719120743886" />
+    <state width="1419" height="298" key="GridCell.Tab.3.left" timestamp="1719120743885">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="298" key="GridCell.Tab.3.left/0.0.1440.900@0.0.1440.900" timestamp="1719120743885" />
+    <state width="1419" height="298" key="GridCell.Tab.3.right" timestamp="1719120743887">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="298" key="GridCell.Tab.3.right/0.0.1440.900@0.0.1440.900" timestamp="1719120743887" />
+    <state x="229" y="86" key="SettingsEditor" timestamp="1719120704418">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="229" y="86" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1719120704418" />
+    <state x="385" y="210" key="run.anything.popup" timestamp="1719120555613">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1719120555613" />
   </component>
 </project>
